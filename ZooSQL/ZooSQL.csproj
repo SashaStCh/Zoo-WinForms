@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{05065D25-E52C-4CDC-8F4E-A613E6B014F0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ZooSQL</RootNamespace>
+    <AssemblyName>ZooSQL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>macaw.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animal.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AnimalInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnimalInsert.Designer.cs">
+      <DependentUpon>AnimalInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnimalUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnimalUpdate.Designer.cs">
+      <DependentUpon>AnimalUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Animal_Analysis.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Animal_AnalysisInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Animal_AnalysisInsert.Designer.cs">
+      <DependentUpon>Animal_AnalysisInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Animal_AnalysisUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Animal_AnalysisUpdate.Designer.cs">
+      <DependentUpon>Animal_AnalysisUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authorization.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Aviary.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AviaryInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AviaryInsert.Designer.cs">
+      <DependentUpon>AviaryInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AviaryUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AviaryUpdate.Designer.cs">
+      <DependentUpon>AviaryUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cashbox.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cashbox_Status.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\CRUDAnimal.cs" />
+    <Compile Include="CRUD\CRUDAnimal_Analysis.cs" />
+    <Compile Include="CRUD\CRUDAuthorization.cs" />
+    <Compile Include="CRUD\CRUDAviary.cs" />
+    <Compile Include="CRUD\CRUDCashbox.cs" />
+    <Compile Include="CRUD\CRUDCashbox_Status.cs" />
+    <Compile Include="CRUD\CRUDEmployee.cs" />
+    <Compile Include="CRUD\CRUDFeeding_Time.cs" />
+    <Compile Include="CRUD\CRUDFood.cs" />
+    <Compile Include="CRUD\CRUDFood_Ration.cs" />
+    <Compile Include="CRUD\CRUDHealth_Status.cs" />
+    <Compile Include="CRUD\CRUDHistory_Work_Shift.cs" />
+    <Compile Include="CRUD\CRUDJob.cs" />
+    <Compile Include="CRUD\CRUDSpeties.cs" />
+    <Compile Include="CRUD\CRUDStatus_Changes.cs" />
+    <Compile Include="CRUD\CRUDTicket.cs" />
+    <Compile Include="CRUD\CRUDTicket_Type.cs" />
+    <Compile Include="CRUD\CRUDWork_Shift.cs" />
+    <Compile Include="CRUD\CRUDZoo_Information.cs" />
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EmloyeesInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmloyeesInsert.Designer.cs">
+      <DependentUpon>EmloyeesInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeUpdate.Designer.cs">
+      <DependentUpon>EmployeeUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feeding_Time.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Feeding_TimeInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feeding_TimeInsert.Designer.cs">
+      <DependentUpon>Feeding_TimeInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feeding_TimeUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feeding_TimeUpdate.Designer.cs">
+      <DependentUpon>Feeding_TimeUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Food.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FoodInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodInsert.Designer.cs">
+      <DependentUpon>FoodInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodUpdate.Designer.cs">
+      <DependentUpon>FoodUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Food_Ration.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Health_Status.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="History_Work_Shift.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="History_Work_ShiftInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="History_Work_ShiftInsert.Designer.cs">
+      <DependentUpon>History_Work_ShiftInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="History_Work_ShiftUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="History_Work_ShiftUpdate.Designer.cs">
+      <DependentUpon>History_Work_ShiftUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Job.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Speties.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpetiesInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpetiesInsert.Designer.cs">
+      <DependentUpon>SpetiesInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpetiesUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpetiesUpdate.Designer.cs">
+      <DependentUpon>SpetiesUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Status_Changes.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Status_ChangesInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Status_ChangesInsert.Designer.cs">
+      <DependentUpon>Status_ChangesInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Status_ChangesUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Status_ChangesUpdate.Designer.cs">
+      <DependentUpon>Status_ChangesUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketInsert.Designer.cs">
+      <DependentUpon>TicketInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TicketUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketUpdate.Designer.cs">
+      <DependentUpon>TicketUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket_Type.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Work_Shift.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZooInformationInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZooInformationInsert.Designer.cs">
+      <DependentUpon>ZooInformationInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZooModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZooModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZooModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZooModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZooModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ZooRepository.cs" />
+    <Compile Include="Zoo_Information.cs">
+      <DependentUpon>ZooModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Zoo_InformationUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zoo_InformationUpdate.Designer.cs">
+      <DependentUpon>Zoo_InformationUpdate.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AnimalInsert.resx">
+      <DependentUpon>AnimalInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnimalUpdate.resx">
+      <DependentUpon>AnimalUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Animal_AnalysisInsert.resx">
+      <DependentUpon>Animal_AnalysisInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Animal_AnalysisUpdate.resx">
+      <DependentUpon>Animal_AnalysisUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AviaryInsert.resx">
+      <DependentUpon>AviaryInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AviaryUpdate.resx">
+      <DependentUpon>AviaryUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmloyeesInsert.resx">
+      <DependentUpon>EmloyeesInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeUpdate.resx">
+      <DependentUpon>EmployeeUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feeding_TimeInsert.resx">
+      <DependentUpon>Feeding_TimeInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feeding_TimeUpdate.resx">
+      <DependentUpon>Feeding_TimeUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodInsert.resx">
+      <DependentUpon>FoodInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodUpdate.resx">
+      <DependentUpon>FoodUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="History_Work_ShiftInsert.resx">
+      <DependentUpon>History_Work_ShiftInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="History_Work_ShiftUpdate.resx">
+      <DependentUpon>History_Work_ShiftUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SpetiesInsert.resx">
+      <DependentUpon>SpetiesInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpetiesUpdate.resx">
+      <DependentUpon>SpetiesUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Status_ChangesInsert.resx">
+      <DependentUpon>Status_ChangesInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Status_ChangesUpdate.resx">
+      <DependentUpon>Status_ChangesUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketInsert.resx">
+      <DependentUpon>TicketInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketUpdate.resx">
+      <DependentUpon>TicketUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZooInformationInsert.resx">
+      <DependentUpon>ZooInformationInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zoo_InformationUpdate.resx">
+      <DependentUpon>Zoo_InformationUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="ZooModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ZooModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ZooModel.edmx.diagram">
+      <DependentUpon>ZooModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="macaw.ico" />
+    <Content Include="ZooModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ZooModel.Context.cs</LastGenOutput>
+      <DependentUpon>ZooModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="ZooModel.edmx.sql" />
+    <Content Include="ZooModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ZooModel.cs</LastGenOutput>
+      <DependentUpon>ZooModel.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

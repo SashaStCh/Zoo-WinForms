@@ -1,0 +1,1128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ZooModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ZooModelStoreContainer">
+    <EntitySet Name="FoodSet" EntityType="ZooModel.Store.FoodSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Food_RationSet" EntityType="ZooModel.Store.Food_RationSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SpetiesSet" EntityType="ZooModel.Store.SpetiesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Feeding_TimeSet" EntityType="ZooModel.Store.Feeding_TimeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AnimalSet" EntityType="ZooModel.Store.AnimalSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AviarySet" EntityType="ZooModel.Store.AviarySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Health_StatusSet" EntityType="ZooModel.Store.Health_StatusSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Animal_AnalysisSet" EntityType="ZooModel.Store.Animal_AnalysisSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Zoo_InformationSet" EntityType="ZooModel.Store.Zoo_InformationSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AuthorizationSet" EntityType="ZooModel.Store.AuthorizationSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeeSet" EntityType="ZooModel.Store.EmployeeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="History_Work_ShiftSet" EntityType="ZooModel.Store.History_Work_ShiftSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Work_ShiftSet" EntityType="ZooModel.Store.Work_ShiftSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cashbox_StatusSet" EntityType="ZooModel.Store.Cashbox_StatusSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Status_ChangesSet" EntityType="ZooModel.Store.Status_ChangesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CashboxSet" EntityType="ZooModel.Store.CashboxSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TicketSet" EntityType="ZooModel.Store.TicketSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Ticket_TypeSet" EntityType="ZooModel.Store.Ticket_TypeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JobSet" EntityType="ZooModel.Store.JobSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FoodFeeding_Time" Association="ZooModel.Store.FoodFeeding_Time">
+      <End Role="Food" EntitySet="FoodSet" />
+      <End Role="Feeding_Time" EntitySet="Feeding_TimeSet" />
+    </AssociationSet>
+    <AssociationSet Name="FoodFood_Ration" Association="ZooModel.Store.FoodFood_Ration">
+      <End Role="Food" EntitySet="FoodSet" />
+      <End Role="Food_Ration" EntitySet="Food_RationSet" />
+    </AssociationSet>
+    <AssociationSet Name="SpetiesFood_Ration" Association="ZooModel.Store.SpetiesFood_Ration">
+      <End Role="Speties" EntitySet="SpetiesSet" />
+      <End Role="Food_Ration" EntitySet="Food_RationSet" />
+    </AssociationSet>
+    <AssociationSet Name="SpetiesAnimal" Association="ZooModel.Store.SpetiesAnimal">
+      <End Role="Speties" EntitySet="SpetiesSet" />
+      <End Role="Animal" EntitySet="AnimalSet" />
+    </AssociationSet>
+    <AssociationSet Name="AviaryAnimal" Association="ZooModel.Store.AviaryAnimal">
+      <End Role="Aviary" EntitySet="AviarySet" />
+      <End Role="Animal" EntitySet="AnimalSet" />
+    </AssociationSet>
+    <AssociationSet Name="AnimalFeeding_Time" Association="ZooModel.Store.AnimalFeeding_Time">
+      <End Role="Animal" EntitySet="AnimalSet" />
+      <End Role="Feeding_Time" EntitySet="Feeding_TimeSet" />
+    </AssociationSet>
+    <AssociationSet Name="AnimalAnimal_Analysis" Association="ZooModel.Store.AnimalAnimal_Analysis">
+      <End Role="Animal" EntitySet="AnimalSet" />
+      <End Role="Animal_Analysis" EntitySet="Animal_AnalysisSet" />
+    </AssociationSet>
+    <AssociationSet Name="Health_StatusAnimal_Analysis" Association="ZooModel.Store.Health_StatusAnimal_Analysis">
+      <End Role="Health_Status" EntitySet="Health_StatusSet" />
+      <End Role="Animal_Analysis" EntitySet="Animal_AnalysisSet" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeFeeding_Time" Association="ZooModel.Store.EmployeeFeeding_Time">
+      <End Role="Employee" EntitySet="EmployeeSet" />
+      <End Role="Feeding_Time" EntitySet="Feeding_TimeSet" />
+    </AssociationSet>
+    <AssociationSet Name="JobEmployee" Association="ZooModel.Store.JobEmployee">
+      <End Role="Job" EntitySet="JobSet" />
+      <End Role="Employee" EntitySet="EmployeeSet" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeHistory_Work_Shift" Association="ZooModel.Store.EmployeeHistory_Work_Shift">
+      <End Role="Employee" EntitySet="EmployeeSet" />
+      <End Role="History_Work_Shift" EntitySet="History_Work_ShiftSet" />
+    </AssociationSet>
+    <AssociationSet Name="Work_ShiftHistory_Work_Shift" Association="ZooModel.Store.Work_ShiftHistory_Work_Shift">
+      <End Role="Work_Shift" EntitySet="Work_ShiftSet" />
+      <End Role="History_Work_Shift" EntitySet="History_Work_ShiftSet" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeStatus_Changes" Association="ZooModel.Store.EmployeeStatus_Changes">
+      <End Role="Employee" EntitySet="EmployeeSet" />
+      <End Role="Status_Changes" EntitySet="Status_ChangesSet" />
+    </AssociationSet>
+    <AssociationSet Name="Cashbox_StatusStatus_Changes" Association="ZooModel.Store.Cashbox_StatusStatus_Changes">
+      <End Role="Cashbox_Status" EntitySet="Cashbox_StatusSet" />
+      <End Role="Status_Changes" EntitySet="Status_ChangesSet" />
+    </AssociationSet>
+    <AssociationSet Name="CashboxStatus_Changes" Association="ZooModel.Store.CashboxStatus_Changes">
+      <End Role="Cashbox" EntitySet="CashboxSet" />
+      <End Role="Status_Changes" EntitySet="Status_ChangesSet" />
+    </AssociationSet>
+    <AssociationSet Name="CashboxTicket" Association="ZooModel.Store.CashboxTicket">
+      <End Role="Cashbox" EntitySet="CashboxSet" />
+      <End Role="Ticket" EntitySet="TicketSet" />
+    </AssociationSet>
+    <AssociationSet Name="Ticket_TypeTicket" Association="ZooModel.Store.Ticket_TypeTicket">
+      <End Role="Ticket_Type" EntitySet="Ticket_TypeSet" />
+      <End Role="Ticket" EntitySet="TicketSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="FoodSet">
+    <Key>
+      <PropertyRef Name="food_name" />
+    </Key>
+    <Property Name="food_name" Type="nvarchar" StoreGeneratedPattern="Identity" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Food_RationSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Food_food_name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Speties_species_name" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SpetiesSet">
+    <Key>
+      <PropertyRef Name="species_name" />
+    </Key>
+    <Property Name="species_name" Type="nvarchar" StoreGeneratedPattern="Identity" Nullable="false" MaxLength="200" />
+    <Property Name="name_in_latin" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Feeding_TimeSet">
+    <Key>
+      <PropertyRef Name="f_time" />
+    </Key>
+    <Property Name="f_time" Type="datetime" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Food_food_name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Animal_animal_code" Type="int" Nullable="false" />
+    <Property Name="Employee_emp_code" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AnimalSet">
+    <Key>
+      <PropertyRef Name="animal_code" />
+    </Key>
+    <Property Name="animal_code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="animal_name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="animal_gender" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="color" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="date_of_birth" Type="datetime" Nullable="false" />
+    <Property Name="Speties_species_name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Aviary_aviary_code" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AviarySet">
+    <Key>
+      <PropertyRef Name="aviary_code" />
+    </Key>
+    <Property Name="aviary_code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="aviary_type" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="area" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Health_StatusSet">
+    <Key>
+      <PropertyRef Name="h_status" />
+    </Key>
+    <Property Name="h_status" Type="nvarchar" StoreGeneratedPattern="Identity" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Animal_AnalysisSet">
+    <Key>
+      <PropertyRef Name="analysis_code" />
+    </Key>
+    <Property Name="analysis_code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="analysis_date" Type="datetime" Nullable="false" />
+    <Property Name="weight" Type="int" Nullable="false" />
+    <Property Name="Animal_animal_code" Type="int" Nullable="false" />
+    <Property Name="Health_Status_h_status" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Zoo_InformationSet">
+    <Key>
+      <PropertyRef Name="zoo_name" />
+    </Key>
+    <Property Name="zoo_name" Type="nvarchar" StoreGeneratedPattern="Identity" Nullable="false" MaxLength="200" />
+    <Property Name="address" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="zoo_area" Type="int" Nullable="false" />
+    <Property Name="opening_time" Type="datetime" Nullable="false" />
+    <Property Name="closing_time" Type="datetime" Nullable="false" />
+    <Property Name="hotline_phone" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="zoo_history" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="AuthorizationSet">
+    <Key>
+      <PropertyRef Name="login" />
+    </Key>
+    <Property Name="login" Type="nvarchar" StoreGeneratedPattern="Identity" Nullable="false" MaxLength="32" />
+    <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="EmployeeSet">
+    <Key>
+      <PropertyRef Name="emp_code" />
+    </Key>
+    <Property Name="emp_code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="last_name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="first_name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="patronymic" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="emp_gender" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="salary" Type="decimal" Nullable="false" Precision="15" Scale="2" />
+    <Property Name="phone_number" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="address" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="email" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="start_schedule" Type="time" Nullable="false" />
+    <Property Name="finish_schedule" Type="time" Nullable="false" />
+    <Property Name="Job_job_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="History_Work_ShiftSet">
+    <Key>
+      <PropertyRef Name="time_a_l" />
+    </Key>
+    <Property Name="time_a_l" Type="datetime" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Employee_emp_code" Type="int" Nullable="false" />
+    <Property Name="Work_Shift_arrival_leaving" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Work_ShiftSet">
+    <Key>
+      <PropertyRef Name="arrival_leaving" />
+    </Key>
+    <Property Name="arrival_leaving" Type="nvarchar" StoreGeneratedPattern="Identity" Nullable="false" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="Cashbox_StatusSet">
+    <Key>
+      <PropertyRef Name="status_name" />
+    </Key>
+    <Property Name="status_name" Type="nvarchar" StoreGeneratedPattern="Identity" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Status_ChangesSet">
+    <Key>
+      <PropertyRef Name="status_date" />
+    </Key>
+    <Property Name="status_date" Type="datetime" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Employee_emp_code" Type="int" Nullable="false" />
+    <Property Name="Cashbox_Status_status_name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Cashbox_cashbox_code" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CashboxSet">
+    <Key>
+      <PropertyRef Name="cashbox_code" />
+    </Key>
+    <Property Name="cashbox_code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TicketSet">
+    <Key>
+      <PropertyRef Name="ticket_code" />
+    </Key>
+    <Property Name="ticket_code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date_of_purchase" Type="datetime" Nullable="false" />
+    <Property Name="Cashbox_cashbox_code" Type="int" Nullable="false" />
+    <Property Name="Ticket_Type_t_type" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ticket_TypeSet">
+    <Key>
+      <PropertyRef Name="t_type" />
+    </Key>
+    <Property Name="t_type" Type="nvarchar" StoreGeneratedPattern="Identity" Nullable="false" MaxLength="32" />
+    <Property Name="price" Type="decimal" Nullable="false" Precision="15" Scale="2" />
+  </EntityType>
+  <EntityType Name="JobSet">
+    <Key>
+      <PropertyRef Name="job_id" />
+    </Key>
+    <Property Name="job_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="job_name" Type="nvarchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <Association Name="FoodFeeding_Time">
+    <End Role="Food" Type="ZooModel.Store.FoodSet" Multiplicity="1" />
+    <End Role="Feeding_Time" Type="ZooModel.Store.Feeding_TimeSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Food">
+        <PropertyRef Name="food_name" />
+      </Principal>
+      <Dependent Role="Feeding_Time">
+        <PropertyRef Name="Food_food_name" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FoodFood_Ration">
+    <End Role="Food" Type="ZooModel.Store.FoodSet" Multiplicity="1" />
+    <End Role="Food_Ration" Type="ZooModel.Store.Food_RationSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Food">
+        <PropertyRef Name="food_name" />
+      </Principal>
+      <Dependent Role="Food_Ration">
+        <PropertyRef Name="Food_food_name" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SpetiesFood_Ration">
+    <End Role="Speties" Type="ZooModel.Store.SpetiesSet" Multiplicity="1" />
+    <End Role="Food_Ration" Type="ZooModel.Store.Food_RationSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Speties">
+        <PropertyRef Name="species_name" />
+      </Principal>
+      <Dependent Role="Food_Ration">
+        <PropertyRef Name="Speties_species_name" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SpetiesAnimal">
+    <End Role="Speties" Type="ZooModel.Store.SpetiesSet" Multiplicity="1" />
+    <End Role="Animal" Type="ZooModel.Store.AnimalSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Speties">
+        <PropertyRef Name="species_name" />
+      </Principal>
+      <Dependent Role="Animal">
+        <PropertyRef Name="Speties_species_name" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AviaryAnimal">
+    <End Role="Aviary" Type="ZooModel.Store.AviarySet" Multiplicity="1" />
+    <End Role="Animal" Type="ZooModel.Store.AnimalSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aviary">
+        <PropertyRef Name="aviary_code" />
+      </Principal>
+      <Dependent Role="Animal">
+        <PropertyRef Name="Aviary_aviary_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AnimalFeeding_Time">
+    <End Role="Animal" Type="ZooModel.Store.AnimalSet" Multiplicity="1" />
+    <End Role="Feeding_Time" Type="ZooModel.Store.Feeding_TimeSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Animal">
+        <PropertyRef Name="animal_code" />
+      </Principal>
+      <Dependent Role="Feeding_Time">
+        <PropertyRef Name="Animal_animal_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AnimalAnimal_Analysis">
+    <End Role="Animal" Type="ZooModel.Store.AnimalSet" Multiplicity="1" />
+    <End Role="Animal_Analysis" Type="ZooModel.Store.Animal_AnalysisSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Animal">
+        <PropertyRef Name="animal_code" />
+      </Principal>
+      <Dependent Role="Animal_Analysis">
+        <PropertyRef Name="Animal_animal_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Health_StatusAnimal_Analysis">
+    <End Role="Health_Status" Type="ZooModel.Store.Health_StatusSet" Multiplicity="1" />
+    <End Role="Animal_Analysis" Type="ZooModel.Store.Animal_AnalysisSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Health_Status">
+        <PropertyRef Name="h_status" />
+      </Principal>
+      <Dependent Role="Animal_Analysis">
+        <PropertyRef Name="Health_Status_h_status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeFeeding_Time">
+    <End Role="Employee" Type="ZooModel.Store.EmployeeSet" Multiplicity="1" />
+    <End Role="Feeding_Time" Type="ZooModel.Store.Feeding_TimeSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="emp_code" />
+      </Principal>
+      <Dependent Role="Feeding_Time">
+        <PropertyRef Name="Employee_emp_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobEmployee">
+    <End Role="Job" Type="ZooModel.Store.JobSet" Multiplicity="1" />
+    <End Role="Employee" Type="ZooModel.Store.EmployeeSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="job_id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Job_job_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeHistory_Work_Shift">
+    <End Role="Employee" Type="ZooModel.Store.EmployeeSet" Multiplicity="1" />
+    <End Role="History_Work_Shift" Type="ZooModel.Store.History_Work_ShiftSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="emp_code" />
+      </Principal>
+      <Dependent Role="History_Work_Shift">
+        <PropertyRef Name="Employee_emp_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Work_ShiftHistory_Work_Shift">
+    <End Role="Work_Shift" Type="ZooModel.Store.Work_ShiftSet" Multiplicity="1" />
+    <End Role="History_Work_Shift" Type="ZooModel.Store.History_Work_ShiftSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Work_Shift">
+        <PropertyRef Name="arrival_leaving" />
+      </Principal>
+      <Dependent Role="History_Work_Shift">
+        <PropertyRef Name="Work_Shift_arrival_leaving" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeStatus_Changes">
+    <End Role="Employee" Type="ZooModel.Store.EmployeeSet" Multiplicity="1" />
+    <End Role="Status_Changes" Type="ZooModel.Store.Status_ChangesSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="emp_code" />
+      </Principal>
+      <Dependent Role="Status_Changes">
+        <PropertyRef Name="Employee_emp_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Cashbox_StatusStatus_Changes">
+    <End Role="Cashbox_Status" Type="ZooModel.Store.Cashbox_StatusSet" Multiplicity="1" />
+    <End Role="Status_Changes" Type="ZooModel.Store.Status_ChangesSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cashbox_Status">
+        <PropertyRef Name="status_name" />
+      </Principal>
+      <Dependent Role="Status_Changes">
+        <PropertyRef Name="Cashbox_Status_status_name" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CashboxStatus_Changes">
+    <End Role="Cashbox" Type="ZooModel.Store.CashboxSet" Multiplicity="1" />
+    <End Role="Status_Changes" Type="ZooModel.Store.Status_ChangesSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cashbox">
+        <PropertyRef Name="cashbox_code" />
+      </Principal>
+      <Dependent Role="Status_Changes">
+        <PropertyRef Name="Cashbox_cashbox_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CashboxTicket">
+    <End Role="Cashbox" Type="ZooModel.Store.CashboxSet" Multiplicity="1" />
+    <End Role="Ticket" Type="ZooModel.Store.TicketSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cashbox">
+        <PropertyRef Name="cashbox_code" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="Cashbox_cashbox_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ticket_TypeTicket">
+    <End Role="Ticket_Type" Type="ZooModel.Store.Ticket_TypeSet" Multiplicity="1" />
+    <End Role="Ticket" Type="ZooModel.Store.TicketSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ticket_Type">
+        <PropertyRef Name="t_type" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="Ticket_Type_t_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ZooModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ZooModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FoodSet" EntityType="ZooModel.Food" />
+          <EntitySet Name="Food_RationSet" EntityType="ZooModel.Food_Ration" />
+          <EntitySet Name="SpetiesSet" EntityType="ZooModel.Speties" />
+          <EntitySet Name="Feeding_TimeSet" EntityType="ZooModel.Feeding_Time" />
+          <EntitySet Name="AnimalSet" EntityType="ZooModel.Animal" />
+          <EntitySet Name="AviarySet" EntityType="ZooModel.Aviary" />
+          <EntitySet Name="Health_StatusSet" EntityType="ZooModel.Health_Status" />
+          <EntitySet Name="Animal_AnalysisSet" EntityType="ZooModel.Animal_Analysis" />
+          <EntitySet Name="Zoo_InformationSet" EntityType="ZooModel.Zoo_Information" />
+          <EntitySet Name="AuthorizationSet" EntityType="ZooModel.Authorization" />
+          <EntitySet Name="EmployeeSet" EntityType="ZooModel.Employee" />
+          <EntitySet Name="History_Work_ShiftSet" EntityType="ZooModel.History_Work_Shift" />
+          <EntitySet Name="Work_ShiftSet" EntityType="ZooModel.Work_Shift" />
+          <EntitySet Name="Cashbox_StatusSet" EntityType="ZooModel.Cashbox_Status" />
+          <EntitySet Name="Status_ChangesSet" EntityType="ZooModel.Status_Changes" />
+          <EntitySet Name="CashboxSet" EntityType="ZooModel.Cashbox" />
+          <EntitySet Name="TicketSet" EntityType="ZooModel.Ticket" />
+          <EntitySet Name="Ticket_TypeSet" EntityType="ZooModel.Ticket_Type" />
+          <EntitySet Name="JobSet" EntityType="ZooModel.Job" />
+          <AssociationSet Name="FoodFeeding_Time" Association="ZooModel.FoodFeeding_Time">
+            <End Role="Food" EntitySet="FoodSet" />
+            <End Role="Feeding_Time" EntitySet="Feeding_TimeSet" />
+          </AssociationSet>
+          <AssociationSet Name="FoodFood_Ration" Association="ZooModel.FoodFood_Ration">
+            <End Role="Food" EntitySet="FoodSet" />
+            <End Role="Food_Ration" EntitySet="Food_RationSet" />
+          </AssociationSet>
+          <AssociationSet Name="SpetiesFood_Ration" Association="ZooModel.SpetiesFood_Ration">
+            <End Role="Speties" EntitySet="SpetiesSet" />
+            <End Role="Food_Ration" EntitySet="Food_RationSet" />
+          </AssociationSet>
+          <AssociationSet Name="SpetiesAnimal" Association="ZooModel.SpetiesAnimal">
+            <End Role="Speties" EntitySet="SpetiesSet" />
+            <End Role="Animal" EntitySet="AnimalSet" />
+          </AssociationSet>
+          <AssociationSet Name="AviaryAnimal" Association="ZooModel.AviaryAnimal">
+            <End Role="Aviary" EntitySet="AviarySet" />
+            <End Role="Animal" EntitySet="AnimalSet" />
+          </AssociationSet>
+          <AssociationSet Name="AnimalFeeding_Time" Association="ZooModel.AnimalFeeding_Time">
+            <End Role="Animal" EntitySet="AnimalSet" />
+            <End Role="Feeding_Time" EntitySet="Feeding_TimeSet" />
+          </AssociationSet>
+          <AssociationSet Name="AnimalAnimal_Analysis" Association="ZooModel.AnimalAnimal_Analysis">
+            <End Role="Animal" EntitySet="AnimalSet" />
+            <End Role="Animal_Analysis" EntitySet="Animal_AnalysisSet" />
+          </AssociationSet>
+          <AssociationSet Name="Health_StatusAnimal_Analysis" Association="ZooModel.Health_StatusAnimal_Analysis">
+            <End Role="Health_Status" EntitySet="Health_StatusSet" />
+            <End Role="Animal_Analysis" EntitySet="Animal_AnalysisSet" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeFeeding_Time" Association="ZooModel.EmployeeFeeding_Time">
+            <End Role="Employee" EntitySet="EmployeeSet" />
+            <End Role="Feeding_Time" EntitySet="Feeding_TimeSet" />
+          </AssociationSet>
+          <AssociationSet Name="JobEmployee" Association="ZooModel.JobEmployee">
+            <End Role="Job" EntitySet="JobSet" />
+            <End Role="Employee" EntitySet="EmployeeSet" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeHistory_Work_Shift" Association="ZooModel.EmployeeHistory_Work_Shift">
+            <End Role="Employee" EntitySet="EmployeeSet" />
+            <End Role="History_Work_Shift" EntitySet="History_Work_ShiftSet" />
+          </AssociationSet>
+          <AssociationSet Name="Work_ShiftHistory_Work_Shift" Association="ZooModel.Work_ShiftHistory_Work_Shift">
+            <End Role="Work_Shift" EntitySet="Work_ShiftSet" />
+            <End Role="History_Work_Shift" EntitySet="History_Work_ShiftSet" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeStatus_Changes" Association="ZooModel.EmployeeStatus_Changes">
+            <End Role="Employee" EntitySet="EmployeeSet" />
+            <End Role="Status_Changes" EntitySet="Status_ChangesSet" />
+          </AssociationSet>
+          <AssociationSet Name="Cashbox_StatusStatus_Changes" Association="ZooModel.Cashbox_StatusStatus_Changes">
+            <End Role="Cashbox_Status" EntitySet="Cashbox_StatusSet" />
+            <End Role="Status_Changes" EntitySet="Status_ChangesSet" />
+          </AssociationSet>
+          <AssociationSet Name="CashboxStatus_Changes" Association="ZooModel.CashboxStatus_Changes">
+            <End Role="Cashbox" EntitySet="CashboxSet" />
+            <End Role="Status_Changes" EntitySet="Status_ChangesSet" />
+          </AssociationSet>
+          <AssociationSet Name="CashboxTicket" Association="ZooModel.CashboxTicket">
+            <End Role="Cashbox" EntitySet="CashboxSet" />
+            <End Role="Ticket" EntitySet="TicketSet" />
+          </AssociationSet>
+          <AssociationSet Name="Ticket_TypeTicket" Association="ZooModel.Ticket_TypeTicket">
+            <End Role="Ticket_Type" EntitySet="Ticket_TypeSet" />
+            <End Role="Ticket" EntitySet="TicketSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Food">
+          <Key>
+            <PropertyRef Name="food_name" />
+          </Key>
+          <Property Name="food_name" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" MaxLength="200" />
+          <NavigationProperty Name="Feeding_Time" Relationship="ZooModel.FoodFeeding_Time" FromRole="Food" ToRole="Feeding_Time" />
+          <NavigationProperty Name="Food_Ration" Relationship="ZooModel.FoodFood_Ration" FromRole="Food" ToRole="Food_Ration" />
+        </EntityType>
+        <EntityType Name="Food_Ration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <NavigationProperty Name="Food" Relationship="ZooModel.FoodFood_Ration" FromRole="Food_Ration" ToRole="Food" />
+          <NavigationProperty Name="Speties" Relationship="ZooModel.SpetiesFood_Ration" FromRole="Food_Ration" ToRole="Speties" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Speties">
+          <Key>
+            <PropertyRef Name="species_name" />
+          </Key>
+          <Property Name="species_name" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" MaxLength="200" />
+          <Property Name="name_in_latin" Type="String" Nullable="false" MaxLength="200" />
+          <Property Name="description" Type="String" Nullable="true" MaxLength="Max" />
+          <NavigationProperty Name="Food_Ration" Relationship="ZooModel.SpetiesFood_Ration" FromRole="Speties" ToRole="Food_Ration" />
+          <NavigationProperty Name="Animal" Relationship="ZooModel.SpetiesAnimal" FromRole="Speties" ToRole="Animal" />
+        </EntityType>
+        <EntityType Name="Feeding_Time">
+          <Key>
+            <PropertyRef Name="f_time" />
+          </Key>
+          <Property Name="f_time" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Food" Relationship="ZooModel.FoodFeeding_Time" FromRole="Feeding_Time" ToRole="Food" />
+          <NavigationProperty Name="Animal" Relationship="ZooModel.AnimalFeeding_Time" FromRole="Feeding_Time" ToRole="Animal" />
+          <NavigationProperty Name="Employee" Relationship="ZooModel.EmployeeFeeding_Time" FromRole="Feeding_Time" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Animal">
+          <Key>
+            <PropertyRef Name="animal_code" />
+          </Key>
+          <Property Name="animal_code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="animal_name" Type="String" Nullable="false" MaxLength="200" />
+          <Property Name="animal_gender" Type="String" Nullable="false" MaxLength="1" />
+          <Property Name="color" Type="String" Nullable="true" MaxLength="200" />
+          <Property Name="date_of_birth" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Speties" Relationship="ZooModel.SpetiesAnimal" FromRole="Animal" ToRole="Speties" />
+          <NavigationProperty Name="Aviary" Relationship="ZooModel.AviaryAnimal" FromRole="Animal" ToRole="Aviary" />
+          <NavigationProperty Name="Feeding_Time" Relationship="ZooModel.AnimalFeeding_Time" FromRole="Animal" ToRole="Feeding_Time" />
+          <NavigationProperty Name="Animal_Analysis" Relationship="ZooModel.AnimalAnimal_Analysis" FromRole="Animal" ToRole="Animal_Analysis" />
+        </EntityType>
+        <EntityType Name="Aviary">
+          <Key>
+            <PropertyRef Name="aviary_code" />
+          </Key>
+          <Property Name="aviary_code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="aviary_type" Type="String" Nullable="true" MaxLength="200" />
+          <Property Name="area" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Animal" Relationship="ZooModel.AviaryAnimal" FromRole="Aviary" ToRole="Animal" />
+        </EntityType>
+        <EntityType Name="Health_Status">
+          <Key>
+            <PropertyRef Name="h_status" />
+          </Key>
+          <Property Name="h_status" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" MaxLength="200" />
+          <NavigationProperty Name="Animal_Analysis" Relationship="ZooModel.Health_StatusAnimal_Analysis" FromRole="Health_Status" ToRole="Animal_Analysis" />
+        </EntityType>
+        <EntityType Name="Animal_Analysis">
+          <Key>
+            <PropertyRef Name="analysis_code" />
+          </Key>
+          <Property Name="analysis_code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="analysis_date" Type="DateTime" Nullable="false" />
+          <Property Name="weight" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Animal" Relationship="ZooModel.AnimalAnimal_Analysis" FromRole="Animal_Analysis" ToRole="Animal" />
+          <NavigationProperty Name="Health_Status" Relationship="ZooModel.Health_StatusAnimal_Analysis" FromRole="Animal_Analysis" ToRole="Health_Status" />
+        </EntityType>
+        <EntityType Name="Zoo_Information">
+          <Key>
+            <PropertyRef Name="zoo_name" />
+          </Key>
+          <Property Name="zoo_name" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" MaxLength="200" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="200" />
+          <Property Name="zoo_area" Type="Int32" Nullable="false" />
+          <Property Name="opening_time" Type="DateTime" Nullable="false" />
+          <Property Name="closing_time" Type="DateTime" Nullable="false" />
+          <Property Name="hotline_phone" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" MaxLength="10" />
+          <Property Name="zoo_history" Type="String" Nullable="true" MaxLength="Max" />
+        </EntityType>
+        <EntityType Name="Authorization">
+          <Key>
+            <PropertyRef Name="login" />
+          </Key>
+          <Property Name="login" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" MaxLength="32" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="emp_code" />
+          </Key>
+          <Property Name="emp_code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="last_name" Type="String" Nullable="false" MaxLength="200" />
+          <Property Name="first_name" Type="String" Nullable="false" MaxLength="200" />
+          <Property Name="patronymic" Type="String" Nullable="true" MaxLength="200" />
+          <Property Name="emp_gender" Type="String" Nullable="false" MaxLength="1" />
+          <Property Name="salary" Type="Decimal" Nullable="false" Scale="2" Precision="15" />
+          <Property Name="phone_number" Type="String" Nullable="false" MaxLength="10" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="200" />
+          <Property Name="email" Type="String" Nullable="true" MaxLength="200" />
+          <Property Name="start_schedule" Type="Time" Nullable="false" />
+          <Property Name="finish_schedule" Type="Time" Nullable="false" />
+          <NavigationProperty Name="Feeding_Time" Relationship="ZooModel.EmployeeFeeding_Time" FromRole="Employee" ToRole="Feeding_Time" />
+          <NavigationProperty Name="Job" Relationship="ZooModel.JobEmployee" FromRole="Employee" ToRole="Job" />
+          <NavigationProperty Name="History_Work_Shift" Relationship="ZooModel.EmployeeHistory_Work_Shift" FromRole="Employee" ToRole="History_Work_Shift" />
+          <NavigationProperty Name="Status_Changes" Relationship="ZooModel.EmployeeStatus_Changes" FromRole="Employee" ToRole="Status_Changes" />
+        </EntityType>
+        <EntityType Name="History_Work_Shift">
+          <Key>
+            <PropertyRef Name="time_a_l" />
+          </Key>
+          <Property Name="time_a_l" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Employee" Relationship="ZooModel.EmployeeHistory_Work_Shift" FromRole="History_Work_Shift" ToRole="Employee" />
+          <NavigationProperty Name="Work_Shift" Relationship="ZooModel.Work_ShiftHistory_Work_Shift" FromRole="History_Work_Shift" ToRole="Work_Shift" />
+        </EntityType>
+        <EntityType Name="Work_Shift">
+          <Key>
+            <PropertyRef Name="arrival_leaving" />
+          </Key>
+          <Property Name="arrival_leaving" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" MaxLength="32" />
+          <NavigationProperty Name="History_Work_Shift" Relationship="ZooModel.Work_ShiftHistory_Work_Shift" FromRole="Work_Shift" ToRole="History_Work_Shift" />
+        </EntityType>
+        <EntityType Name="Cashbox_Status">
+          <Key>
+            <PropertyRef Name="status_name" />
+          </Key>
+          <Property Name="status_name" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" MaxLength="200" />
+          <NavigationProperty Name="Status_Changes" Relationship="ZooModel.Cashbox_StatusStatus_Changes" FromRole="Cashbox_Status" ToRole="Status_Changes" />
+        </EntityType>
+        <EntityType Name="Status_Changes">
+          <Key>
+            <PropertyRef Name="status_date" />
+          </Key>
+          <Property Name="status_date" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Employee" Relationship="ZooModel.EmployeeStatus_Changes" FromRole="Status_Changes" ToRole="Employee" />
+          <NavigationProperty Name="Cashbox_Status" Relationship="ZooModel.Cashbox_StatusStatus_Changes" FromRole="Status_Changes" ToRole="Cashbox_Status" />
+          <NavigationProperty Name="Cashbox" Relationship="ZooModel.CashboxStatus_Changes" FromRole="Status_Changes" ToRole="Cashbox" />
+        </EntityType>
+        <EntityType Name="Cashbox">
+          <Key>
+            <PropertyRef Name="cashbox_code" />
+          </Key>
+          <Property Name="cashbox_code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Status_Changes" Relationship="ZooModel.CashboxStatus_Changes" FromRole="Cashbox" ToRole="Status_Changes" />
+          <NavigationProperty Name="Ticket" Relationship="ZooModel.CashboxTicket" FromRole="Cashbox" ToRole="Ticket" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="ticket_code" />
+          </Key>
+          <Property Name="ticket_code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date_of_purchase" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Cashbox" Relationship="ZooModel.CashboxTicket" FromRole="Ticket" ToRole="Cashbox" />
+          <NavigationProperty Name="Ticket_Type" Relationship="ZooModel.Ticket_TypeTicket" FromRole="Ticket" ToRole="Ticket_Type" />
+        </EntityType>
+        <EntityType Name="Ticket_Type">
+          <Key>
+            <PropertyRef Name="t_type" />
+          </Key>
+          <Property Name="t_type" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" MaxLength="32" />
+          <Property Name="price" Type="Decimal" Nullable="false" Precision="15" Scale="2" />
+          <NavigationProperty Name="Ticket" Relationship="ZooModel.Ticket_TypeTicket" FromRole="Ticket_Type" ToRole="Ticket" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="job_id" />
+          </Key>
+          <Property Name="job_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="job_name" Type="String" Nullable="false" MaxLength="200" />
+          <NavigationProperty Name="Employee" Relationship="ZooModel.JobEmployee" FromRole="Job" ToRole="Employee" />
+        </EntityType>
+        <Association Name="FoodFeeding_Time">
+          <End Type="ZooModel.Food" Role="Food" Multiplicity="1" />
+          <End Type="ZooModel.Feeding_Time" Role="Feeding_Time" Multiplicity="*" />
+        </Association>
+        <Association Name="FoodFood_Ration">
+          <End Type="ZooModel.Food" Role="Food" Multiplicity="1" />
+          <End Type="ZooModel.Food_Ration" Role="Food_Ration" Multiplicity="*" />
+        </Association>
+        <Association Name="SpetiesFood_Ration">
+          <End Type="ZooModel.Speties" Role="Speties" Multiplicity="1" />
+          <End Type="ZooModel.Food_Ration" Role="Food_Ration" Multiplicity="*" />
+        </Association>
+        <Association Name="SpetiesAnimal">
+          <End Type="ZooModel.Speties" Role="Speties" Multiplicity="1" />
+          <End Type="ZooModel.Animal" Role="Animal" Multiplicity="*" />
+        </Association>
+        <Association Name="AviaryAnimal">
+          <End Type="ZooModel.Aviary" Role="Aviary" Multiplicity="1" />
+          <End Type="ZooModel.Animal" Role="Animal" Multiplicity="*" />
+        </Association>
+        <Association Name="AnimalFeeding_Time">
+          <End Type="ZooModel.Animal" Role="Animal" Multiplicity="1" />
+          <End Type="ZooModel.Feeding_Time" Role="Feeding_Time" Multiplicity="*" />
+        </Association>
+        <Association Name="AnimalAnimal_Analysis">
+          <End Type="ZooModel.Animal" Role="Animal" Multiplicity="1" />
+          <End Type="ZooModel.Animal_Analysis" Role="Animal_Analysis" Multiplicity="*" />
+        </Association>
+        <Association Name="Health_StatusAnimal_Analysis">
+          <End Type="ZooModel.Health_Status" Role="Health_Status" Multiplicity="1" />
+          <End Type="ZooModel.Animal_Analysis" Role="Animal_Analysis" Multiplicity="*" />
+        </Association>
+        <Association Name="EmployeeFeeding_Time">
+          <End Type="ZooModel.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="ZooModel.Feeding_Time" Role="Feeding_Time" Multiplicity="*" />
+        </Association>
+        <Association Name="JobEmployee">
+          <End Type="ZooModel.Job" Role="Job" Multiplicity="1" />
+          <End Type="ZooModel.Employee" Role="Employee" Multiplicity="*" />
+        </Association>
+        <Association Name="EmployeeHistory_Work_Shift">
+          <End Type="ZooModel.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="ZooModel.History_Work_Shift" Role="History_Work_Shift" Multiplicity="*" />
+        </Association>
+        <Association Name="Work_ShiftHistory_Work_Shift">
+          <End Type="ZooModel.Work_Shift" Role="Work_Shift" Multiplicity="1" />
+          <End Type="ZooModel.History_Work_Shift" Role="History_Work_Shift" Multiplicity="*" />
+        </Association>
+        <Association Name="EmployeeStatus_Changes">
+          <End Type="ZooModel.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="ZooModel.Status_Changes" Role="Status_Changes" Multiplicity="*" />
+        </Association>
+        <Association Name="Cashbox_StatusStatus_Changes">
+          <End Type="ZooModel.Cashbox_Status" Role="Cashbox_Status" Multiplicity="1" />
+          <End Type="ZooModel.Status_Changes" Role="Status_Changes" Multiplicity="*" />
+        </Association>
+        <Association Name="CashboxStatus_Changes">
+          <End Type="ZooModel.Cashbox" Role="Cashbox" Multiplicity="1" />
+          <End Type="ZooModel.Status_Changes" Role="Status_Changes" Multiplicity="*" />
+        </Association>
+        <Association Name="CashboxTicket">
+          <End Type="ZooModel.Cashbox" Role="Cashbox" Multiplicity="1" />
+          <End Type="ZooModel.Ticket" Role="Ticket" Multiplicity="*" />
+        </Association>
+        <Association Name="Ticket_TypeTicket">
+          <End Type="ZooModel.Ticket_Type" Role="Ticket_Type" Multiplicity="1" />
+          <End Type="ZooModel.Ticket" Role="Ticket" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ZooModelStoreContainer" CdmEntityContainer="ZooModelContainer">
+    <EntitySetMapping Name="FoodSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.Food)">
+        <MappingFragment StoreEntitySet="FoodSet">
+          <ScalarProperty Name="food_name" ColumnName="food_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Food_RationSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.Food_Ration)">
+        <MappingFragment StoreEntitySet="Food_RationSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SpetiesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.Speties)">
+        <MappingFragment StoreEntitySet="SpetiesSet">
+          <ScalarProperty Name="species_name" ColumnName="species_name" />
+          <ScalarProperty Name="name_in_latin" ColumnName="name_in_latin" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feeding_TimeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.Feeding_Time)">
+        <MappingFragment StoreEntitySet="Feeding_TimeSet">
+          <ScalarProperty Name="f_time" ColumnName="f_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnimalSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.Animal)">
+        <MappingFragment StoreEntitySet="AnimalSet">
+          <ScalarProperty Name="animal_code" ColumnName="animal_code" />
+          <ScalarProperty Name="animal_name" ColumnName="animal_name" />
+          <ScalarProperty Name="animal_gender" ColumnName="animal_gender" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="date_of_birth" ColumnName="date_of_birth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AviarySet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.Aviary)">
+        <MappingFragment StoreEntitySet="AviarySet">
+          <ScalarProperty Name="aviary_code" ColumnName="aviary_code" />
+          <ScalarProperty Name="aviary_type" ColumnName="aviary_type" />
+          <ScalarProperty Name="area" ColumnName="area" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Health_StatusSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.Health_Status)">
+        <MappingFragment StoreEntitySet="Health_StatusSet">
+          <ScalarProperty Name="h_status" ColumnName="h_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Animal_AnalysisSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.Animal_Analysis)">
+        <MappingFragment StoreEntitySet="Animal_AnalysisSet">
+          <ScalarProperty Name="analysis_code" ColumnName="analysis_code" />
+          <ScalarProperty Name="analysis_date" ColumnName="analysis_date" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zoo_InformationSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.Zoo_Information)">
+        <MappingFragment StoreEntitySet="Zoo_InformationSet">
+          <ScalarProperty Name="zoo_name" ColumnName="zoo_name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="zoo_area" ColumnName="zoo_area" />
+          <ScalarProperty Name="opening_time" ColumnName="opening_time" />
+          <ScalarProperty Name="closing_time" ColumnName="closing_time" />
+          <ScalarProperty Name="hotline_phone" ColumnName="hotline_phone" />
+          <ScalarProperty Name="zoo_history" ColumnName="zoo_history" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuthorizationSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.Authorization)">
+        <MappingFragment StoreEntitySet="AuthorizationSet">
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.Employee)">
+        <MappingFragment StoreEntitySet="EmployeeSet">
+          <ScalarProperty Name="emp_code" ColumnName="emp_code" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+          <ScalarProperty Name="emp_gender" ColumnName="emp_gender" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="start_schedule" ColumnName="start_schedule" />
+          <ScalarProperty Name="finish_schedule" ColumnName="finish_schedule" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="History_Work_ShiftSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.History_Work_Shift)">
+        <MappingFragment StoreEntitySet="History_Work_ShiftSet">
+          <ScalarProperty Name="time_a_l" ColumnName="time_a_l" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Work_ShiftSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.Work_Shift)">
+        <MappingFragment StoreEntitySet="Work_ShiftSet">
+          <ScalarProperty Name="arrival_leaving" ColumnName="arrival_leaving" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cashbox_StatusSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.Cashbox_Status)">
+        <MappingFragment StoreEntitySet="Cashbox_StatusSet">
+          <ScalarProperty Name="status_name" ColumnName="status_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status_ChangesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.Status_Changes)">
+        <MappingFragment StoreEntitySet="Status_ChangesSet">
+          <ScalarProperty Name="status_date" ColumnName="status_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CashboxSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.Cashbox)">
+        <MappingFragment StoreEntitySet="CashboxSet">
+          <ScalarProperty Name="cashbox_code" ColumnName="cashbox_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TicketSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.Ticket)">
+        <MappingFragment StoreEntitySet="TicketSet">
+          <ScalarProperty Name="ticket_code" ColumnName="ticket_code" />
+          <ScalarProperty Name="date_of_purchase" ColumnName="date_of_purchase" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ticket_TypeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.Ticket_Type)">
+        <MappingFragment StoreEntitySet="Ticket_TypeSet">
+          <ScalarProperty Name="t_type" ColumnName="t_type" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ZooModel.Job)">
+        <MappingFragment StoreEntitySet="JobSet">
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+          <ScalarProperty Name="job_name" ColumnName="job_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FoodFeeding_Time" TypeName="ZooModel.FoodFeeding_Time" StoreEntitySet="Feeding_TimeSet">
+      <EndProperty Name="Food">
+        <ScalarProperty Name="food_name" ColumnName="Food_food_name" />
+      </EndProperty>
+      <EndProperty Name="Feeding_Time">
+        <ScalarProperty Name="f_time" ColumnName="f_time" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FoodFood_Ration" TypeName="ZooModel.FoodFood_Ration" StoreEntitySet="Food_RationSet">
+      <EndProperty Name="Food">
+        <ScalarProperty Name="food_name" ColumnName="Food_food_name" />
+      </EndProperty>
+      <EndProperty Name="Food_Ration">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SpetiesFood_Ration" TypeName="ZooModel.SpetiesFood_Ration" StoreEntitySet="Food_RationSet">
+      <EndProperty Name="Speties">
+        <ScalarProperty Name="species_name" ColumnName="Speties_species_name" />
+      </EndProperty>
+      <EndProperty Name="Food_Ration">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SpetiesAnimal" TypeName="ZooModel.SpetiesAnimal" StoreEntitySet="AnimalSet">
+      <EndProperty Name="Speties">
+        <ScalarProperty Name="species_name" ColumnName="Speties_species_name" />
+      </EndProperty>
+      <EndProperty Name="Animal">
+        <ScalarProperty Name="animal_code" ColumnName="animal_code" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AviaryAnimal" TypeName="ZooModel.AviaryAnimal" StoreEntitySet="AnimalSet">
+      <EndProperty Name="Aviary">
+        <ScalarProperty Name="aviary_code" ColumnName="Aviary_aviary_code" />
+      </EndProperty>
+      <EndProperty Name="Animal">
+        <ScalarProperty Name="animal_code" ColumnName="animal_code" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AnimalFeeding_Time" TypeName="ZooModel.AnimalFeeding_Time" StoreEntitySet="Feeding_TimeSet">
+      <EndProperty Name="Animal">
+        <ScalarProperty Name="animal_code" ColumnName="Animal_animal_code" />
+      </EndProperty>
+      <EndProperty Name="Feeding_Time">
+        <ScalarProperty Name="f_time" ColumnName="f_time" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AnimalAnimal_Analysis" TypeName="ZooModel.AnimalAnimal_Analysis" StoreEntitySet="Animal_AnalysisSet">
+      <EndProperty Name="Animal">
+        <ScalarProperty Name="animal_code" ColumnName="Animal_animal_code" />
+      </EndProperty>
+      <EndProperty Name="Animal_Analysis">
+        <ScalarProperty Name="analysis_code" ColumnName="analysis_code" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Health_StatusAnimal_Analysis" TypeName="ZooModel.Health_StatusAnimal_Analysis" StoreEntitySet="Animal_AnalysisSet">
+      <EndProperty Name="Health_Status">
+        <ScalarProperty Name="h_status" ColumnName="Health_Status_h_status" />
+      </EndProperty>
+      <EndProperty Name="Animal_Analysis">
+        <ScalarProperty Name="analysis_code" ColumnName="analysis_code" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EmployeeFeeding_Time" TypeName="ZooModel.EmployeeFeeding_Time" StoreEntitySet="Feeding_TimeSet">
+      <EndProperty Name="Employee">
+        <ScalarProperty Name="emp_code" ColumnName="Employee_emp_code" />
+      </EndProperty>
+      <EndProperty Name="Feeding_Time">
+        <ScalarProperty Name="f_time" ColumnName="f_time" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="JobEmployee" TypeName="ZooModel.JobEmployee" StoreEntitySet="EmployeeSet">
+      <EndProperty Name="Job">
+        <ScalarProperty Name="job_id" ColumnName="Job_job_id" />
+      </EndProperty>
+      <EndProperty Name="Employee">
+        <ScalarProperty Name="emp_code" ColumnName="emp_code" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EmployeeHistory_Work_Shift" TypeName="ZooModel.EmployeeHistory_Work_Shift" StoreEntitySet="History_Work_ShiftSet">
+      <EndProperty Name="Employee">
+        <ScalarProperty Name="emp_code" ColumnName="Employee_emp_code" />
+      </EndProperty>
+      <EndProperty Name="History_Work_Shift">
+        <ScalarProperty Name="time_a_l" ColumnName="time_a_l" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Work_ShiftHistory_Work_Shift" TypeName="ZooModel.Work_ShiftHistory_Work_Shift" StoreEntitySet="History_Work_ShiftSet">
+      <EndProperty Name="Work_Shift">
+        <ScalarProperty Name="arrival_leaving" ColumnName="Work_Shift_arrival_leaving" />
+      </EndProperty>
+      <EndProperty Name="History_Work_Shift">
+        <ScalarProperty Name="time_a_l" ColumnName="time_a_l" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EmployeeStatus_Changes" TypeName="ZooModel.EmployeeStatus_Changes" StoreEntitySet="Status_ChangesSet">
+      <EndProperty Name="Employee">
+        <ScalarProperty Name="emp_code" ColumnName="Employee_emp_code" />
+      </EndProperty>
+      <EndProperty Name="Status_Changes">
+        <ScalarProperty Name="status_date" ColumnName="status_date" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Cashbox_StatusStatus_Changes" TypeName="ZooModel.Cashbox_StatusStatus_Changes" StoreEntitySet="Status_ChangesSet">
+      <EndProperty Name="Cashbox_Status">
+        <ScalarProperty Name="status_name" ColumnName="Cashbox_Status_status_name" />
+      </EndProperty>
+      <EndProperty Name="Status_Changes">
+        <ScalarProperty Name="status_date" ColumnName="status_date" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CashboxStatus_Changes" TypeName="ZooModel.CashboxStatus_Changes" StoreEntitySet="Status_ChangesSet">
+      <EndProperty Name="Cashbox">
+        <ScalarProperty Name="cashbox_code" ColumnName="Cashbox_cashbox_code" />
+      </EndProperty>
+      <EndProperty Name="Status_Changes">
+        <ScalarProperty Name="status_date" ColumnName="status_date" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CashboxTicket" TypeName="ZooModel.CashboxTicket" StoreEntitySet="TicketSet">
+      <EndProperty Name="Cashbox">
+        <ScalarProperty Name="cashbox_code" ColumnName="Cashbox_cashbox_code" />
+      </EndProperty>
+      <EndProperty Name="Ticket">
+        <ScalarProperty Name="ticket_code" ColumnName="ticket_code" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Ticket_TypeTicket" TypeName="ZooModel.Ticket_TypeTicket" StoreEntitySet="TicketSet">
+      <EndProperty Name="Ticket_Type">
+        <ScalarProperty Name="t_type" ColumnName="Ticket_Type_t_type" />
+      </EndProperty>
+      <EndProperty Name="Ticket">
+        <ScalarProperty Name="ticket_code" ColumnName="ticket_code" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
